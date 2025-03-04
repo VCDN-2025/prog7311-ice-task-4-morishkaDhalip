@@ -1,0 +1,33 @@
+﻿@model IEnumerable<IceTask4.Models.HotelBooking>
+
+<h2>Hotel Bookings</h2>
+
+<a asp-action="Create" class="btn btn-primary">New Booking</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Check-In</th>
+            <th>Check-Out</th>
+            <th>Room</th>
+            <th>Room Type</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.CustomerName</td>
+                <td>@booking.Email</td>
+                <td>@booking.CheckInDate.ToShortDateString()</td>
+                <td>@booking.CheckOutDate.ToShortDateString()</td>
+                <td>@booking.RoomNumber</td>
+                <td>@booking.RoomType</td>
+                <td>@booking.Price.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>

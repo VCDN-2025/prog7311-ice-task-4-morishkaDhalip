@@ -1,0 +1,39 @@
+﻿@model IceTask4.Models.HotelBooking
+
+<h2>Create Booking</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="CustomerName"></label>
+        <input asp-for="CustomerName" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="CheckInDate"></label>
+        <input asp-for="CheckInDate" type="date" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="CheckOutDate"></label>
+        <input asp-for="CheckOutDate" type="date" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="RoomNumber"></label>
+        <input asp-for="RoomNumber" type="number" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="RoomType"></label>
+        <select asp-for="RoomType" class="form-control">
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Suite">Suite</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" type="number" step="0.01" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-success">Book Now</button>
+</form>
